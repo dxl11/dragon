@@ -3,38 +3,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.0</version>
+        <groupId>com</groupId>
+        <artifactId>dragon</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com</groupId>
-    <artifactId>dragon</artifactId>
+    <groupId>com.dragon</groupId>
+    <artifactId>springSourceCodeStudy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dragon</name>
-    <description>dragon</description>
-
-    <modules>
-        <module>springSourceCodeStudy</module>
-        <module>designPatternsStudy</module>
-    </modules>
+    <name>springSourceCodeStudy</name>
+    <description>springSourceCodeStudy</description>
 
     <properties>
         <java.version>17</java.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
+    <!-- 管理依赖和版本，在各个子项目中只需要引入依赖即可，不需要在引入版本号，从而使各个子版本引入的依赖版本相同 -->
+    <dependencyManagement>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+    </dependencyManagement>
+
+    <dependencies>
     </dependencies>
 
     <build>
