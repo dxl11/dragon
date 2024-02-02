@@ -22,6 +22,7 @@
         <module>myServiceImplementation</module>
         <module>merchandiseOrder</module>
         <module>safetyVerification</module>
+        <module>ELKLogSystem</module>
     </modules>
 
     <properties>

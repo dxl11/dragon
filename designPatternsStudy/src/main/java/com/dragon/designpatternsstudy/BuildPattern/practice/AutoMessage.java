@@ -1,8 +1,8 @@
-package com.dragon.designpatternsstudy.BuildPattern;
+package com.dragon.designpatternsstudy.BuildPattern.practice;
 
 import java.util.Date;
 
-public abstract class AutoMessage {
+public class AutoMessage {
     /**
      * 收件人地址
      */
