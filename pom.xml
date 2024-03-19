@@ -12,8 +12,6 @@
     <groupId>com</groupId>
     <artifactId>dragon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dragon</name>
-    <description>dragon</description>
     <packaging>pom</packaging>
 
     <modules>
@@ -23,6 +21,7 @@
         <module>merchandiseOrder</module>
         <module>safetyVerification</module>
         <module>ELKLogSystem</module>
+        <module>MySQLStudy</module>
     </modules>
 
     <properties>

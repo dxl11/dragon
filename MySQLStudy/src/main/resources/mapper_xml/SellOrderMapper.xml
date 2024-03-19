@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dxl.mysqlstudy.mappers.SellOrderMapper">
+    <resultMap id="BaseResultMap" type="com.dxl.mysqlstudy.entity.SellOrder">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="signing_time" jdbcType="TIMESTAMP" property="signingTime"/>
+        <result column="contract_no" jdbcType="VARCHAR" property="contractNo"/>
+        <result column="product_name" jdbcType="VARCHAR" property="productName"/>
+        <result column="cas_order" jdbcType="VARCHAR" property="casOrder"/>
+        <result column="attribute_specification" jdbcType="VARCHAR" property="attributeSpecification"/>
+        <result column="unit" jdbcType="VARCHAR" property="unit"/>
+        <result column="amount" jdbcType="DECIMAL" property="amount"/>
+        <result column="unit_Price" jdbcType="DECIMAL" property="unitPrice"/>
+        <result column="total_price" jdbcType="DECIMAL" property="totalPrice"/>
+        <result column="customer_name" jdbcType="VARCHAR" property="customerName"/>
+        <result column="sales_person" jdbcType="VARCHAR" property="salesPerson"/>
+        <result column="contract" jdbcType="VARCHAR" property="contract"/>
+        <result column="shipments_time" jdbcType="TIMESTAMP" property="shipmentsTime"/>
+        <result column="billing_time" jdbcType="TIMESTAMP" property="billingTime"/>
+        <result column="accounts_due_time" jdbcType="TIMESTAMP" property="accountsDueTime"/>
+        <result column="accounts_time" jdbcType="TIMESTAMP" property="accountsTime"/>
+        <result column="accounts_money" jdbcType="DECIMAL" property="accountsMoney"/>
+        <result column="status" jdbcType="BIGINT" property="status"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="pay_type" jdbcType="VARCHAR" property="payType"/>
+        <result column="account_batch_number_unit" jdbcType="VARCHAR" property="accountBatchNumberUnit"/>
+        <result column="coin" jdbcType="VARCHAR" property="coin"/>
+        <result column="billing_money" jdbcType="DECIMAL" property="billingMoney"/>
+        <result column="billing_order" jdbcType="VARCHAR" property="billingOrder"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id
+        ,signing_time,contract_no, product_name, cas_order, attribute_specification, unit, amount, unit_Price,
+        total_price, customer_name,
+        sales_person,contract,shipments_time,billing_time,accounts_due_time,accounts_time,
+        accounts_money,user_id,status,pay_type,account_batch_number_unit,coin,billing_money,billing_order,
+    create_time, update_time,remark
+    </sql>
+
+    <insert id="insert" parameterType="com.dxl.mysqlstudy.entity.SellOrder">
+        insert into jsh_sell_order (id
+            , signing_time, contract_no, product_name, cas_order, attribute_specification, unit, amount, unit_Price,
+                                    total_price, customer_name,
+                                    sales_person, contract, shipments_time, billing_time, accounts_due_time,
+                                    accounts_time,
+                                    accounts_money, user_id, status, pay_type, account_batch_number_unit, coin,
+                                    billing_money,
+                                    billing_order,
+                                    create_time, update_time, remark)
+        values (#{id,jdbcType=BIGINT}, #{signingTime,jdbcType=TIMESTAMP}, #{contractNo,jdbcType=VARCHAR},
+                #{productName,jdbcType=VARCHAR},
+                #{casOrder,jdbcType=VARCHAR},
+                #{attributeSpecification,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR},
+                #{amount,jdbcType=DECIMAL},
+                #{unitPrice,jdbcType=DECIMAL}, #{totalPrice,jdbcType=DECIMAL}, #{customerName,jdbcType=VARCHAR},
+                #{salesPerson,jdbcType=VARCHAR}, #{contract,jdbcType=VARCHAR},
+                #{shipmentsTime,jdbcType=TIMESTAMP}, #{billingTime,jdbcType=TIMESTAMP},
+                #{accountsDueTime,jdbcType=TIMESTAMP}, #{accountsTime,jdbcType=TIMESTAMP},
+                #{accountsMoney,jdbcType=DECIMAL}, #{userId,jdbcType=BIGINT}, #{status,jdbcType=BIGINT},
+                #{payType,jdbcType=VARCHAR}, #{accountBatchNumberUnit,jdbcType=VARCHAR}, #{coin,jdbcType=VARCHAR},
+                #{billingMoney,jdbcType=DECIMAL}, #{billingOrder,jdbcType=VARCHAR}
+                #{createTime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.dxl.mysqlstudy.entity.SellOrder">
+        insert into jsh_sell_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="signingTime != null">
+                signing_time,
+            </if>
+            <if test="contractNo != null">
+                contract_no,
+            </if>
+            <if test="productName != null">
+                product_name,
+            </if>
+            <if test="casOrder != null">
+                cas_order,
+            </if>
+            <if test="attributeSpecification != null">
+                attribute_specification,
+            </if>
+            <if test="unit != null">
+                unit,
+            </if>
+            <if test="amount != null">
+                amount,
+            </if>
+            <if test="unitPrice != null">
+                unit_price,
+            </if>
+            <if test="totalPrice != null">
+                total_price,
+            </if>
+            <if test="customerName != null">
+                customer_name,
+            </if>
+            <if test="salesPerson != null">
+                sales_person,
+            </if>
+            <if test="contract != null">
+                contract,
+            </if>
+            <if test="shipmentsTime != null">
+                shipments_time,
+            </if>
+            <if test="billingTime != null">
+                billing_time,
+            </if>
+            <if test="accountsDueTime != null">
+                accounts_due_time,
+            </if>
+            <if test="accountsTime != null">
+                accounts_time,
+            </if>
+            <if test="accountsMoney != null">
+                accounts_money,
+            </if>
+            <if test="userId != null and userId !=0">
+                user_id,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="payType != null">
+                pay_type,
+            </if>
+            <if test="accountBatchNumberUnit != null">
+                account_batch_number_unit,
+            </if>
+            <if test="coin != null">
+                coin,
+            </if>
+            <if test="billingMoney != null">
+                billing_money,
+            </if>
+            <if test="billingOrder != null">
+                billing_order,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="signingTime != null">
+                #{signingTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="contractNo != null">
+                #{contractNo,jdbcType=VARCHAR},
+            </if>
+            <if test="productName != null">
+                #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="casOrder != null">
+                #{casOrder,jdbcType=VARCHAR},
+            </if>
+            <if test="attributeSpecification != null">
+                #{attributeSpecification,jdbcType=VARCHAR},
+            </if>
+            <if test="unit != null">
+                #{unit,jdbcType=VARCHAR},
+            </if>
+            <if test="amount != null">
+                #{amount,jdbcType=DECIMAL},
+            </if>
+            <if test="unitPrice != null">
+                #{unitPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="totalPrice != null">
+                #{totalPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="customerName != null">
+                #{customerName,jdbcType=VARCHAR},
+            </if>
+            <if test="salesPerson != null">
+                #{salesPerson,jdbcType=VARCHAR},
+            </if>
+            <if test="contract != null">
+                #{contract,jdbcType=VARCHAR},
+            </if>
+            <if test="shipmentsTime != null">
+                #{shipmentsTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="billingTime != null">
+                #{billingTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="accountsDueTime != null">
+                #{accountsDueTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="accountsTime != null">
+                #{accountsTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="accountsMoney != null">
+                #{accountsMoney,jdbcType=DECIMAL},
+            </if>
+            <if test="userId != null and userId !=0">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=BIGINT},
+            </if>
+            <if test="payType != null">
+                #{payType,jdbcType=VARCHAR},
+            </if>
+            <if test="accountBatchNumberUnit != null">
+                #{accountBatchNumberUnit,jdbcType=VARCHAR},
+            </if>
+            <if test="coin != null">
+                #{coin,jdbcType=VARCHAR},
+            </if>
+            <if test="billingMoney != null">
+                #{billingMoney,jdbcType=DECIMAL},
+            </if>
+            <if test="billingOrder != null">
+                #{billingOrder,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+
+</mapper>
