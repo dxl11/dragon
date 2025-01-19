@@ -74,6 +74,7 @@ public static void main(String[] args) throws Exception {
     list.add(new CommonMap<String, Object>().putData("searchkey", "耐克运动鞋").putData("name", "耐克运动鞋"));
     list.add(new CommonMap<String, Object>().putData("searchkey", "耐克运动鞋").putData("name", "耐克运动鞋"));
     list.add(new CommonMap<String, Object>().putData("searchkey", "耐克运动鞋").putData("name", "耐克运动鞋"));
+    list.add(new CommonMap<String, Object>().putData("searchkey", "耐克运动鞋").putData("name", "耐克运动鞋"));
     bulkAddDoc(commonEntity);
 }
 }
