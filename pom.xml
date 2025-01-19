@@ -20,8 +20,8 @@
         <module>myServiceImplementation</module>
         <module>merchandiseOrder</module>
         <module>safetyVerification</module>
-        <module>ELKLogSystem</module>
         <module>MySQLStudy</module>
+        <module>mg</module>
     </modules>
 
     <properties>
