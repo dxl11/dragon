@@ -1,10 +1,10 @@
-package com.dxl.dragondailylearning;
+package com.dxl.dragonsecurity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DragonDailyLearningApplicationTests {
+class DragonSecurityApplicationTests {
 
     @Test
     void contextLoads() {
