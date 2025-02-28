@@ -1,4 +1,4 @@
-package com.dxl.dragondailylearning;
+package com.example.dragondailylearning;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

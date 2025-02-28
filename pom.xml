@@ -9,13 +9,13 @@
 		<version>3.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	<packaging>pom</packaging>
 
 	<groupId>com.dxl</groupId>
 	<artifactId>dragon</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dragon</name>
 	<description>Demo project for Spring Boot</description>
-	<url/>
 
 	<modules>
 		<module>dragon-daily-learning</module>
@@ -63,6 +63,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -70,6 +75,32 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.4.3</version>
+			</plugin>
+
+			<!-- maven-surefire-plugin 配置 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.2</version>
+				<configuration>
+					<!-- 跳过测试 -->
+					<skipTests>false</skipTests>
+					<!-- 包含或排除特定的测试类 -->
+					<includes>
+						<include>**/*Tests.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/*IntegrationTests.java</exclude>
+					</excludes>
+					<!-- 设置测试运行的并行线程数 -->
+					<parallel>methods</parallel>
+					<threadCount>4</threadCount>
+					<!-- 设置测试超时时间 -->
+					<forkCount>1</forkCount>
+					<reuseForks>true</reuseForks>
+					<argLine>-Xmx1024m</argLine>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
