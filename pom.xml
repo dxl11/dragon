@@ -19,6 +19,7 @@
 
 	<modules>
 		<module>dragon-daily-learning</module>
+		<module>dragon-security</module>
 	</modules>
 
 	<!--项目得许可信息-->
